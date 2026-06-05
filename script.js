@@ -92,8 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-}); // <-- Cierre del document.addEventListener de la Parte 1
-
 /* ==========================================================================
    4. FUNCIONES GLOBALES DE ACCIÓN (CTAs)
    ========================================================================== */
