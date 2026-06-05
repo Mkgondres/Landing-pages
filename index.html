@@ -3,317 +3,495 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AURA: El sistema definitivo de conversión para emprendedores de élite.">
-    <title>AURA | Arquitectura de Conversión para el 1%</title>
+    <title>Códice de Conversión | Domina el Marketing de Alto Nivel</title>
     
-    <!-- Pre-conexión a tipografías premium -->
+    <link rel="stylesheet" href="assets/css/premium-styles.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- ¡ESTA ES LA LÍNEA MÁGICA QUE FALTABA! -->
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
+<body class="theme-dark premium-scroll">
 
-<body class="theme-obsidian-dark">
-
-    <!-- 0. EFECTOS DE ILUMINACIÓN DE FONDO (Premium Detail) -->
-    <!-- Estos div vacíos se usarán en CSS para crear esferas de luz borrosas en el fondo profundo -->
-    <div class="ambient-glow glow-top-left"></div>
-    <div class="ambient-glow glow-center-right"></div>
-
-    <!-- 1. NAVEGACIÓN FLOTANTE (Glassmorphism) -->
-    <header class="nav-glass-wrapper fixed-top">
-        <div class="container nav-flex-layout">
-            
+    <nav class="navbar glass-effect sticky-top" id="main-nav">
+        <div class="container nav-wrapper">
             <div class="brand-logo">
-                <!-- Se usa un logo tipográfico minimalista o un SVG puro para máxima nitidez -->
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 22H22L12 2Z" stroke="#D4AF37" stroke-width="2" stroke-linejoin="round"/>
-                    <path d="M12 10L7 20H17L12 10Z" fill="#D4AF37" opacity="0.3"/>
-                </svg>
-                <span class="brand-text">AURA</span>
+                <span class="text-gold">Códice</span> de Conversión
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#el-sistema" class="nav-link">El Sistema</a></li>
+                <li><a href="#beneficios" class="nav-link">Beneficios Élite</a></li>
+                <li><a href="#mentor" class="nav-link">El Arquitecto</a></li>
+                <li><a href="#historias" class="nav-link">Casos de Éxito</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <div class="nav-action">
+                <button class="btn-outline-gold" onclick="scrollToCheckout()">Ingresar Ahora</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section" id="inicio">
+        <div class="hero-glow-effect"></div> <div class="container hero-grid">
+            
+            <div class="hero-content">
+                <div class="badge-premium">Edición Limitada 2026</div>
+                <h1 class="hero-title">
+                    Domina el Juego. <br>
+                    <span class="text-gradient-gold">Multiplica tu Patrimonio.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    No es un simple curso de marketing. Es la arquitectura exacta, validada por marcas de 7 cifras, para escalar negocios, dominar la atención y generar ingresos de alto nivel en piloto automático.
+                </p>
+                <div class="hero-cta-group">
+                    <button class="btn-primary-gold pulse-animation" onclick="scrollToCheckout()">
+                        Desbloquear el Códice
+                        <span class="btn-arrow">→</span>
+                    </button>
+                    <button class="btn-play-video" onclick="openVideoModal()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                        Ver el Sistema en Acción
+                    </button>
+                </div>
+                <div class="hero-guarantee">
+                    <span class="icon-shield">🛡️</span> Acceso Inmediato • Garantía de 30 Días
+                </div>
             </div>
 
-            <nav class="desktop-menu">
-                <a href="#filosofia" class="menu-link">Nuestra Filosofía</a>
-                <a href="#arquitectura" class="menu-link">El Sistema</a>
-                <a href="#elite" class="menu-link">Alumni</a>
-            </nav>
-
-            <div class="nav-actions">
-                <a href="#aplicar" class="btn-ghost-gold">Acceso Privado</a>
+            <div class="hero-visual">
+                <div class="visual-placeholder img-frame-gold">
+                    [Espacio para Mockup 3D de Laptop Premium / Video VSL]
+                </div>
             </div>
 
         </div>
     </header>
 
-    <!-- 2. HERO SECTION CINEMÁTICA -->
-    <main>
-        <section class="hero-cinematic">
-            <div class="container hero-layout">
+    <section class="trust-banner">
+        <div class="container trust-wrapper">
+            <p class="trust-label">Estrategias corporativas utilizadas por líderes destacados en:</p>
+            <div class="trust-logos">
+                <div class="logo-item">[Logo Forbes]</div>
+                <div class="logo-item">[Logo Bloomberg]</div>
+                <div class="logo-item">[Logo Entrepreneur]</div>
+                <div class="logo-item">[Logo The Wall Street Journal]</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="revelation-section" id="el-problema">
+        <div class="container revelation-grid">
+            
+            <div class="revelation-image">
+                <div class="visual-placeholder img-shadow-elegant">
+                    [Espacio para Fotografía de Estilo de Vida Ejecutivo]
+                </div>
+            </div>
+
+            <div class="revelation-text">
+                <h2 class="section-title">El 95% de los negocios digitales fracasan por depender de <span class="text-underline-gold">tácticas obsoletas.</span></h2>
+                <div class="separator-line"></div>
+                <p class="body-text">
+                    Estás cansado de campañas publicitarias que devoran tu capital sin retorno. De acumular seguidores que jamás sacan su tarjeta de crédito. De la frustración de lanzar ofertas maestras al vacío absoluto.
+                </p>
+                <p class="body-text">
+                    La diferencia entre un emprendedor que lucha por llegar a fin de mes y un <strong>arquitecto digital que factura millones</strong> no radica en "trabajar más duro". Reside en poseer un ecosistema de ingeniería de persuasión impecable.
+                </p>
                 
-                <!-- Columna de Texto Principal -->
-                <div class="hero-copy-column">
-                    <div class="micro-badge">
-                        <span class="pulse-dot"></span>
-                        <span class="badge-text">Plazas limitadas para 2026</span>
+                <ul class="premium-checklist">
+                    <li>
+                        <span class="check-icon">✕</span> 
+                        <span class="list-text">Basta de rogar por atención con bailes virales.</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✕</span> 
+                        <span class="list-text">Basta de quemar dinero en anuncios mal estructurados.</span>
+                    </li>
+                    <li class="highlight-item">
+                        <span class="check-icon-gold">✓</span> 
+                        <span class="list-text"><strong>Es hora de construir una máquina predecible de clientes de alto valor.</strong></span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    ```
+    <!-- ==================== SECCIÓN EL SISTEMA (MÓDULOS DEL CURSO) ==================== -->
+    <section class="course-modules" id="el-sistema">
+        <div class="container modules-wrapper">
+            <div class="text-center">
+                <h2 class="section-title">El Interior del <span class="text-gold">Códice</span></h2>
+                <p class="section-subtitle">Un mapa de ruta quirúrgico diseñado para llevar tu facturación de cero a seis y siete cifras anuales.</p>
+            </div>
+
+            <div class="modules-grid">
+                <!-- Módulo 1 -->
+                <div class="module-card glass-panel hover-lift">
+                    <div class="module-number">01</div>
+                    <h3 class="module-title">Arquitectura de la Oferta Irresistible</h3>
+                    <p class="module-desc">Aprende a estructurar un producto o servicio que tu cliente ideal se sienta estúpido al rechazar. Transiciónate a precios "High-Ticket" sin fricción.</p>
+                    <ul class="module-features">
+                        <li>Psicología del precio y anclaje mental.</li>
+                        <li>Creación del "Océano Azul" de tu nicho.</li>
+                    </ul>
+                </div>
+
+                <!-- Módulo 2 -->
+                <div class="module-card glass-panel hover-lift">
+                    <div class="module-number">02</div>
+                    <h3 class="module-title">Tráfico de Alta Intención (Ads)</h3>
+                    <p class="module-desc">Deja de comprar "me gustas" y empieza a comprar clientes. Domina Meta, Google y TikTok Ads con segmentación láser y copys persuasivos.</p>
+                    <ul class="module-features">
+                        <li>Estructura de campañas escalables.</li>
+                        <li>Lectura de métricas corporativas (ROAS, CPA, LTV).</li>
+                    </ul>
+                </div>
+
+                <!-- Módulo 3 -->
+                <div class="module-card glass-panel hover-lift">
+                    <div class="module-number">03</div>
+                    <h3 class="module-title">Ecosistemas de Conversión Automática</h3>
+                    <p class="module-desc">Construye embudos de venta (Funnels) que calientan a un completo desconocido hasta convertirlo en un comprador fiel en menos de 48 horas.</p>
+                    <ul class="module-features">
+                        <li>Funnels VSL (Video Sales Letter).</li>
+                        <li>Secuencias de Email Marketing automatizadas.</li>
+                    </ul>
+                </div>
+
+                <!-- Módulo 4 -->
+                <div class="module-card glass-panel hover-lift">
+                    <div class="module-number">04</div>
+                    <h3 class="module-title">Sistemas e Inteligencia Artificial</h3>
+                    <p class="module-desc">Multiplica tu tiempo operando como una empresa de Fortune 500. Integra IA para redacción, análisis de datos y atención al cliente.</p>
+                    <ul class="module-features">
+                        <li>Prompts avanzados de ingeniería.</li>
+                        <li>Automatización con Zapier y CRMs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECCIÓN DE BENEFICIOS ÉLITE (BONOS) ==================== -->
+    <section class="bonuses-section bg-dark-texture" id="beneficios">
+        <div class="container">
+            <h2 class="section-title text-center">Tus <span class="text-gradient-gold">Beneficios Adicionales</span> Sin Costo</h2>
+            <p class="section-subtitle text-center">Herramientas exclusivas para acelerar tus resultados. Valorado en más de $3,500 USD, tuyo gratis hoy.</p>
+
+            <div class="bonuses-list">
+                <!-- Bono 1 -->
+                <div class="bonus-row flex-align-center">
+                    <div class="bonus-icon">
+                        <!-- NOTA: PON UNA FOTO AQUÍ.
+                             ESPECIFICACIÓN: Un icono 3D elegante en color bronce/dorado de unas carpetas de archivos o un cofre abierto brillante. -->
+                        <div class="icon-placeholder">[Icono 3D Archivos]</div>
                     </div>
-                    
-                    <h1 class="hero-headline">
-                        Deja de vender.<br>
-                        <span class="text-gradient-gold">Empieza a magnetizar.</span>
-                    </h1>
-                    
-                    <p class="hero-subheadline">
-                        La arquitectura exacta de embudos que el 1% de los líderes del mercado utiliza para facturar cifras de 6 ceros. Sin tácticas invasivas. Solo psicología profunda y diseño impecable.
-                    </p>
-                    
-                    <div class="hero-button-group">
-                        <a href="#checkout" class="btn-solid-gold">
-                            Desbloquear el Sistema 
-                            <svg class="icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                        <div class="trust-micro-copy">
-                            <span class="stars">★★★★★</span>
-                            <p>Evaluado con 4.9/5 por más de 1,200 fundadores.</p>
-                        </div>
+                    <div class="bonus-content">
+                        <div class="bonus-value">Valor: $497 USD</div>
+                        <h4 class="bonus-title">La Bóveda de Plantillas "Plug & Play"</h4>
+                        <p>Copys de anuncios, guiones de ventas, plantillas de landing pages de alta conversión y secuencias de email comprobadas. Copia, pega y lanza en minutos.</p>
                     </div>
                 </div>
 
-                <!-- Columna Visual (Mockup Premium Flotante) -->
-                <div class="hero-visual-column">
-                    <div class="floating-mockup-wrapper">
-                        <!-- NOTA PARA CLIENTE: Aquí iría un diseño 3D elegante de una caja negra o un iPad mostrando la plataforma -->
-                        <img src="aura-platform-mockup.png" alt="Aura Platform Interface" class="img-fluid floating-animation">
-                        
-                        <!-- Tarjeta de prueba social flotante (Micro-interacción) -->
-                        <div class="glass-card floating-metric">
-                            <div class="metric-icon">📈</div>
-                            <div class="metric-data">
-                                <strong>+340%</strong>
-                                <span>Aumento de conversión promedio</span>
-                            </div>
-                        </div>
+                <!-- Bono 2 -->
+                <div class="bonus-row flex-align-center reverse">
+                    <div class="bonus-content">
+                        <div class="bonus-value">Valor: $997 USD</div>
+                        <h4 class="bonus-title">Masterclass: Cierre High-Ticket</h4>
+                        <p>Aprende a rebatir cualquier objeción en llamadas de venta. Psicología avanzada para cerrar tratos de $2,000 a $10,000 USD sin sonar desesperado ni presionar al cliente.</p>
+                    </div>
+                    <div class="bonus-icon">
+                        <!-- NOTA: PON UNA FOTO AQUÍ.
+                             ESPECIFICACIÓN: Un icono 3D elegante de un teléfono móvil con un gráfico de llamadas y un símbolo de dólar/moneda, con iluminación dorada. -->
+                        <div class="icon-placeholder">[Icono 3D Llamada/Venta]</div>
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- 3. BARRA DE AUTORIDAD EN MONOCROMO -->
-        <section class="authority-strip">
-            <div class="container">
-                <p class="authority-label">Nuestros alumnos dirigen empresas en:</p>
-                <div class="logo-carousel-grid">
-                    <!-- Logos en formato SVG (Garantiza que se vean perfectos en pantallas Retina/4K) -->
-                    <img src="logo-forbes-mono.svg" alt="Forbes" class="brand-logo-mono">
-                    <img src="logo-techcrunch-mono.svg" alt="TechCrunch" class="brand-logo-mono">
-                    <img src="logo-bloomberg-mono.svg" alt="Bloomberg" class="brand-logo-mono">
-                    <img src="logo-wsj-mono.svg" alt="Wall Street Journal" class="brand-logo-mono">
+                <!-- Bono 3 -->
+                <div class="bonus-row flex-align-center">
+                    <div class="bonus-icon">
+                        <!-- NOTA: PON UNA FOTO AQUÍ.
+                             ESPECIFICACIÓN: Un icono 3D que represente una red de nodos o un escudo con una estrella en el centro, simbolizando comunidad de élite. -->
+                        <div class="icon-placeholder">[Icono 3D Red Élite]</div>
+                    </div>
+                    <div class="bonus-content">
+                        <div class="bonus-value">Valor: Invaluable</div>
+                        <h4 class="bonus-title">Acceso Vitalicio a "El Círculo"</h4>
+                        <p>Nuestra comunidad privada y exclusiva. Rodeate de empresarios, marketers y dueños de negocio facturando en grande. Networking de alto nivel y soporte continuo.</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 4. SECCIÓN DEL PARADIGMA (El Problema con Elegancia) -->
-        <section id="filosofia" class="paradigm-shift-section">
-            <div class="container">
-                <div class="section-header-minimal">
-                    <h2 class="section-title">El internet está roto.<br>Y tu cliente lo sabe.</h2>
-                    <div class="gold-divider-line"></div>
-                </div>
-
-                <div class="asymmetric-grid">
-                    
-                    <!-- Tarjeta Oscura: El problema (The Old Way) -->
-                    <article class="concept-card card-dark">
-                        <div class="card-header">
-                            <span class="status-indicator error"></span>
-                            <h3>El Modelo Tradicional</h3>
-                        </div>
-                        <ul class="pain-points-list">
-                            <li><svg viewBox="0 0 24 24" class="icon-x"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2"/></svg> Embudos genéricos que gritan "cómprame".</li>
-                            <li><svg viewBox="0 0 24 24" class="icon-x"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2"/></svg> Promesas vacías que destruyen la confianza.</li>
-                            <li><svg viewBox="0 0 24 24" class="icon-x"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2"/></svg> Guerra de precios bajos y clientes tóxicos.</li>
-                        </ul>
-                    </article>
-
-                    <!-- Tarjeta Iluminada: La Solución (The Aura Way) -->
-                    <article class="concept-card card-glass-gold">
-                        <div class="card-header">
-                            <span class="status-indicator success"></span>
-                            <h3>La Arquitectura AURA</h3>
-                        </div>
-                        <ul class="benefit-points-list">
-                            <li><svg viewBox="0 0 24 24" class="icon-check"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg> Diseño enfocado en neuromarketing de alta gama.</li>
-                            <li><svg viewBox="0 0 24 24" class="icon-check"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg> Posicionamiento automático como autoridad indiscutible.</li>
-                            <li><svg viewBox="0 0 24 24" class="icon-check"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg> Clientes que buscan calidad, no descuentos.</li>
-                        </ul>
-                    </article>
-
+    <!-- ==================== SECCIÓN EL AUTOR (HUMANIZACIÓN Y AUTORIDAD) ==================== -->
+    <section class="author-section" id="mentor">
+        <div class="container author-grid">
+            <div class="author-photo">
+                <!-- NOTA: PON UNA FOTO AQUÍ.
+                     ESPECIFICACIÓN: Retrato profesional pero cercano del autor. Debe estar vestido de forma "Business Casual" elegante (ej: camisa oscura bien entallada, o saco sin corbata). La expresión debe ser de confianza relajada, mirando directo a la cámara. Fondo oscuro texturizado o desenfocado (bokeh) de una oficina moderna. -->
+                <div class="visual-placeholder portrait-frame">
+                    [Retrato del Autor del Curso]
                 </div>
             </div>
-        </section>
-    </main>
-<!-- FIN DE LA PRIMERA MITAD -->
-<!-- CONTINUACIÓN DE LA SEGUNDA MITAD -->
-        <!-- 5. LA ARQUITECTURA (El Sistema / Módulos) -->
-        <section id="arquitectura" class="system-architecture-section">
-            <div class="container">
-                <div class="section-header-left">
-                    <h2 class="section-title">Los 4 Pilares de la Conversión</h2>
-                    <p class="section-subtitle">No es un curso. Es una transferencia de infraestructura de negocios.</p>
-                </div>
-
-                <div class="pillars-timeline">
-                    <!-- Pilar 1 -->
-                    <article class="pillar-card">
-                        <div class="pillar-number">01</div>
-                        <div class="pillar-content">
-                            <h3 class="pillar-title">Fundación Magnética</h3>
-                            <p>Ingeniería de ofertas. Cómo estructurar tu servicio para que el precio se vuelva irrelevante y la demanda supere tu capacidad.</p>
-                        </div>
-                    </article>
-
-                    <!-- Pilar 2 -->
-                    <article class="pillar-card">
-                        <div class="pillar-number">02</div>
-                        <div class="pillar-content">
-                            <h3 class="pillar-title">Fricción Cero (UX/UI)</h3>
-                            <p>Principios de diseño neuro-visual. Eliminamos la carga cognitiva de tus páginas para que el usuario fluya hacia la compra sin resistencia.</p>
-                        </div>
-                    </article>
-
-                    <!-- Pilar 3 -->
-                    <article class="pillar-card">
-                        <div class="pillar-number">03</div>
-                        <div class="pillar-content">
-                            <h3 class="pillar-title">Automatización Invisible</h3>
-                            <p>Sistemas backend sofisticados. El cliente siente una atención 1 a 1, mientras tú operas en escala gracias a secuencias automatizadas de alto nivel.</p>
-                        </div>
-                    </article>
-
-                    <!-- Pilar 4 -->
-                    <article class="pillar-card">
-                        <div class="pillar-number">04</div>
-                        <div class="pillar-content">
-                            <h3 class="pillar-title">Adquisición de Élite</h3>
-                            <p>Tráfico para high-ticket. Dejamos de perseguir clics baratos y estructuramos campañas diseñadas para atraer compradores con alto poder adquisitivo.</p>
-                        </div>
-                    </article>
-                </div>
+            <div class="author-bio">
+                <span class="badge-premium">El Arquitecto Detrás del Método</span>
+                <h2 class="section-title">Hola, soy <span class="text-gold">J.D. Valeriano</span></h2>
+                <p class="body-text">
+                    Hace 8 años, estaba exactamente donde probablemente estés tú hoy: trabajando 14 horas al día, lanzando campañas al azar y rezando para que el saldo de mi cuenta publicitaria no se agotara sin dejarme ganancias.
+                </p>
+                <p class="body-text">
+                    Llegué al punto de quiebre. Me di cuenta de que el éxito no venía de "hacer más ruido", sino de construir un <strong>ecosistema de ventas milimétricamente calculado</strong>. Tras invertir más de $150,000 en mentorías globales y pruebas fallidas, descifré el algoritmo del comportamiento humano aplicado a la compra.
+                </p>
+                <p class="body-text">
+                    Hoy dirijo tres agencias que escalan marcas a 7 cifras. Pero mi misión ahora es otra: democratizar esta información para los verdaderos tomadores de acción. El <em>Códice de Conversión</em> no es teoría, es la documentación exacta de mi éxito empresarial.
+                </p>
+                <img src="assets/img/firma-oro.png" alt="Firma J.D. Valeriano" class="author-signature"> 
+                <!-- NOTA: PON UNA IMAGEN DE FIRMA AQUÍ. Debe ser una firma con estilo cursiva elegante en color dorado png sin fondo. -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 6. ALUMNI (Prueba Social Premium) -->
-        <section id="elite" class="alumni-section">
-            <div class="container">
-                <!-- Efecto de luz detrás de los testimonios -->
-                <div class="ambient-glow glow-center"></div>
+    <!-- ==================== SECCIÓN CASOS DE ÉXITO (TESTIMONIOS) ==================== -->
+    <section class="testimonials-section" id="historias">
+        <div class="container text-center">
+            <h2 class="section-title">No escuches mi voz. <br>Escucha sus <span class="text-underline-gold">Resultados.</span></h2>
+            <p class="section-subtitle">Personas reales que aplicaron el sistema y transformaron su realidad financiera.</p>
+
+            <div class="testimonials-grid">
                 
-                <h2 class="section-title text-center">El Círculo Interno</h2>
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="testimonial-text">"Llevaba meses estancada vendiendo mis consultorías a precios bajísimos por miedo a que nadie comprara. El módulo de la Oferta Irresistible me voló la cabeza. Tripliqué mis precios, automaticé mi embudo y este último mes cerré $12,000 USD trabajando la mitad. Me devolvió la vida."</p>
+                    <div class="testimonial-author">
+                        <!-- NOTA: PON UNA FOTO AQUÍ.
+                             ESPECIFICACIÓN: Fotografía pequeña, circular, de una mujer joven sonriendo en una cafetería luminosa o espacio de coworking. Estética realista de Instagram. -->
+                        <div class="avatar-placeholder">[Foto Cliente 1]</div>
+                        <div class="author-details">
+                            <h5 class="author-name">Laura M.</h5>
+                            <span class="author-role">Consultora de Negocios</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="testimonial-text">"Creía que el marketing digital era subir videos bailando en TikTok. Estaba agotado. J.D. me enseñó a crear un ecosistema serio. Instalamos el sistema de Tráfico de Alta Intención para mi e-commerce y pasamos de facturar $2k al mes a tener ventas diarias constantes que superaron los $20k el último trimestre."</p>
+                    <div class="testimonial-author">
+                        <!-- NOTA: PON UNA FOTO AQUÍ.
+                             ESPECIFICACIÓN: Fotografía circular de un hombre en sus 30s con una camisa polo, fondo de un almacén limpio o una oficina moderna. Natural y honesto. -->
+                        <div class="avatar-placeholder">[Foto Cliente 2]</div>
+                        <div class="author-details">
+                            <h5 class="author-name">Carlos T.</h5>
+                            <span class="author-role">Dueño de E-commerce</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="testimonial-text">"He comprado docenas de cursos que eran solo humo. El Códice es diferente. Es denso, es real y va directo a la yugular del mercado. El bono de cierre High-Ticket pagó la inversión del curso 10 veces en mi primera semana aplicándolo. Simplemente brutal."</p>
+                    <div class="testimonial-author">
+                        <!-- NOTA: PON UNA FOTO AQUÍ.
+                             ESPECIFICACIÓN: Fotografía circular de un hombre o mujer vestido formal/elegante saliendo de un edificio corporativo o dentro de un auto. -->
+                        <div class="avatar-placeholder">[Foto Cliente 3]</div>
+                        <div class="author-details">
+                            <h5 class="author-name">Roberto E.</h5>
+                            <span class="author-role">Inmobiliario Independiente</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Fin de la Parte 2 -->
+    <!-- ==================== SECCIÓN DE OFERTA Y CHECKOUT (EL CIERRE) ==================== -->
+    <section class="checkout-section" id="oferta">
+        <div class="container checkout-wrapper">
+            <div class="checkout-card glass-premium-effect">
+                <div class="checkout-header">
+                    <span class="badge-urgent">Plazas Limitadas - Cierre Próximo</span>
+                    <h2>Tu Acceso al <span class="text-gold">Códice</span></h2>
+                </div>
                 
-                <div class="testimonial-showcase">
-                    <div class="glass-testimonial-card large-card">
-                        <div class="quote-mark">
-                            <!-- Icono de comillas elegante -->
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--gold)" opacity="0.2"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"/></svg>
-                        </div>
-                        <p class="testimonial-text">"Implementar la arquitectura AURA fue el punto de inflexión. Pasamos de vender consultorías de $500 dólares con mucho esfuerzo, a cerrar contratos de $5,000 en llamadas de 20 minutos. La percepción de nuestra marca cambió de la noche a la mañana."</p>
-                        
-                        <div class="alumni-profile">
-                            <!-- NOTA PARA CLIENTE: Imagen en blanco y negro o con filtro elegante (aprox 80x80px) -->
-                            <img src="alumni-ceo.jpg" alt="CEO Portrait" class="avatar-premium">
-                            <div class="alumni-info">
-                                <span class="alumni-name">Elena R.</span>
-                                <span class="alumni-title">Fundadora, Agencia Nova</span>
-                            </div>
+                <div class="checkout-body">
+                    <ul class="checkout-summary-list">
+                        <li><span>Programa Completo "Códice de Conversión"</span> <span class="value">$1,997</span></li>
+                        <li><span>Bono: Bóveda de Plantillas "Plug & Play"</span> <span class="value">$497</span></li>
+                        <li><span>Bono: Masterclass Cierre High-Ticket</span> <span class="value">$997</span></li>
+                        <li><span>Bono: Acceso Vitalicio a "El Círculo"</span> <span class="value">Invaluable</span></li>
+                    </ul>
+                    
+                    <div class="separator-line"></div>
+                    
+                    <div class="price-container">
+                        <div class="regular-price">Valor Total: <span>$3,491 USD</span></div>
+                        <div class="today-price">
+                            <span class="price-label">Tu Inversión Hoy:</span>
+                            <span class="price-number text-gradient-gold">$497 <span class="currency">USD</span></span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 7. LA OFERTA (Checkout Glassmorphism) -->
-        <section id="checkout" class="investment-section">
-            <div class="container">
-                <div class="pricing-glass-panel">
-                    <div class="pricing-content">
-                        <h2>Acceso a la Arquitectura AURA</h2>
-                        <p>Diseñado exclusivamente para creadores de servicios, consultores y agencias que facturan, o están listos para facturar, múltiples 6 cifras.</p>
-                        
-                        <ul class="premium-deliverables">
-                            <li><svg viewBox="0 0 24 24" class="icon-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg> Acceso inmediato a la plataforma privada.</li>
-                            <li><svg viewBox="0 0 24 24" class="icon-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg> Plantillas de embudos en alta resolución (Figma & Webflow).</li>
-                            <li><svg viewBox="0 0 24 24" class="icon-gold"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg> Auditoría trimestral de tus sistemas.</li>
-                        </ul>
-                    </div>
+                    <!-- Botón de Acción Principal -->
+                    <button class="btn-primary-gold btn-massive pulse-animation" onclick="processCheckout()">
+                        INGRESAR AL CÓDICE AHORA
+                        <span class="btn-subtext">Acceso Inmediato y Seguro</span>
+                    </button>
 
-                    <div class="pricing-action">
-                        <span class="price-label">Inversión Única</span>
-                        <div class="price-tag">$1,500 <span class="currency">USD</span></div>
-                        <p class="spots-warning">Solo 12 plazas restantes este mes.</p>
-                        
-                        <a href="#" class="btn-solid-gold w-100">Desbloquear Acceso Seguro</a>
-                        
-                        <div class="secure-checkout">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                            <span>Encriptación de grado militar (SSL 256-bit)</span>
+                    <!-- Métodos de Pago (Confianza y Autoridad) -->
+                    <div class="payment-methods">
+                        <p class="security-text"><span class="icon-lock">🔒</span> Pago 100% Seguro y Encriptado a 256-bits</p>
+                        <div class="payment-icons">
+                            <!-- NOTA: PON FOTOS AQUÍ.
+                                 ESPECIFICACIÓN: Iconos SVG o PNG sin fondo, minimalistas y monocromáticos (blancos o gris claro) de los siguientes métodos de pago para no romper la estética premium. -->
+                            <div class="payment-logo" title="Visa">[Icono Visa]</div>
+                            <div class="payment-logo" title="Mastercard">[Icono Mastercard]</div>
+                            <div class="payment-logo" title="American Express">[Icono Amex]</div>
+                            <div class="payment-logo" title="PayPal">[Icono PayPal]</div>
+                            <div class="payment-logo" title="Apple Pay">[Icono Apple Pay]</div>
+                            <div class="payment-logo" title="Criptomonedas">[Icono Bitcoin/USDT]</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 8. FAQ ELEGANTE -->
-        <section class="faq-minimal-section">
-            <div class="container faq-container">
-                <h2 class="section-title text-center">Transparencia Total</h2>
-                
-                <div class="faq-accordion-premium">
-                    <!-- Pregunta 1 -->
-                    <div class="faq-item-premium">
-                        <button class="faq-question">
-                            <span>¿Es este sistema adecuado para e-commerce físico?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer-wrapper">
-                            <p>AURA está diseñado específicamente para venta de servicios de alto valor (High-Ticket), consultorías, agencias y productos de conocimiento. Si vendes productos físicos de bajo coste, este no es el ecosistema óptimo para ti.</p>
-                        </div>
+    <!-- ==================== SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) ==================== -->
+    <section class="faq-section" id="faq">
+        <div class="container faq-container">
+            <h2 class="section-title text-center">Preguntas <span class="text-gold">Frecuentes</span></h2>
+            <p class="section-subtitle text-center">Resolvemos tus dudas para que tomes una decisión con total claridad.</p>
+
+            <div class="faq-accordion" id="accordion">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">1. ¿Necesito experiencia previa en marketing o ventas?</button>
+                    <div class="faq-answer">
+                        <p>No. El Códice está diseñado desde los cimientos. Te llevamos de los conceptos fundamentales hasta la ejecución avanzada paso a paso, sin asumir conocimientos técnicos previos.</p>
                     </div>
+                </div>
 
-                    <!-- Pregunta 2 -->
-                    <div class="faq-item-premium">
-                        <button class="faq-question">
-                            <span>¿Qué nivel técnico necesito para implementar esto?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer-wrapper">
-                            <p>Proporcionamos toda la ingeniería pre-construida. Tu trabajo será ensamblar las piezas estratégicas y adaptar el "copywriting". Si puedes usar plataformas modernas, puedes implementar AURA.</p>
-                        </div>
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">2. ¿Por cuánto tiempo tendré acceso al material?</button>
+                    <div class="faq-answer">
+                        <p>Tu acceso es de por vida. Un solo pago te garantiza entrada vitalicia al curso, a la comunidad "El Círculo" y a todas las futuras actualizaciones que hagamos en el contenido.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">3. ¿Existe alguna garantía de reembolso?</button>
+                    <div class="faq-answer">
+                        <p>Sí, tienes nuestra Garantía de Hierro de 30 días. Si consumes el contenido, aplicas el sistema y sientes que no te ha aportado un valor que multiplique tu inversión, te devolvemos el 100% de tu dinero. Sin preguntas burocráticas.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">4. ¿Cuánto tiempo necesito dedicarle a la semana?</button>
+                    <div class="faq-answer">
+                        <p>Recomendamos un mínimo de 4 a 6 horas semanales para estudiar los módulos y comenzar a implementar. Al ser grabado, puedes avanzar a tu propio ritmo.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">5. ¿Esto funciona para negocios físicos o solo digitales?</button>
+                    <div class="faq-answer">
+                        <p>Los principios de atracción, persuasión y conversión humana son universales. El sistema ha sido aplicado con éxito tanto por agencias digitales y coaches, como por clínicas dentales, inmobiliarias y estudios de arquitectura.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <button class="faq-question">6. ¿Qué pasa si aún no tengo un producto para vender?</button>
+                    <div class="faq-answer">
+                        <p>El Módulo 1 (Arquitectura de la Oferta) está específicamente diseñado para ayudarte a conceptualizar, empaquetar y validar una oferta altamente rentable, incluso si empiezas desde cero.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item">
+                    <button class="faq-question">7. ¿Necesito un gran presupuesto para anuncios?</button>
+                    <div class="faq-answer">
+                        <p>No. Te enseñamos estrategias de tráfico orgánico inteligente y cómo empezar campañas en Meta/TikTok Ads con presupuestos mínimos de $5 a $10 USD diarios para validar tu oferta antes de escalar.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="faq-item">
+                    <button class="faq-question">8. ¿Se actualiza el contenido cuando cambian los algoritmos?</button>
+                    <div class="faq-answer">
+                        <p>Absolutamente. A diferencia de las tácticas, los principios estratégicos no cambian, pero actualizamos la parte técnica (interfaces de anuncios, herramientas de IA) trimestralmente para mantenernos a la vanguardia.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 9 -->
+                <div class="faq-item">
+                    <button class="faq-question">9. ¿Cómo funciona el soporte y la comunidad?</button>
+                    <div class="faq-answer">
+                        <p>Al ingresar, recibirás un enlace privado a nuestra plataforma comunitaria (Discord/Skool). Allí podrás hacer preguntas directas, compartir tus anuncios para recibir feedback y hacer networking con otros alumnos.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 10 -->
+                <div class="faq-item">
+                    <button class="faq-question">10. ¿Puedo solicitar factura para mi empresa?</button>
+                    <div class="faq-answer">
+                        <p>Por supuesto. Una vez completado el pago en nuestra pasarela segura, recibirás un recibo automático y podrás ingresar tus datos fiscales para emitir la factura deducible de impuestos correspondiente a tu país.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main> <!-- FIN DEL MAIN (Iniciado en la primera mitad) -->
-
-    <!-- FOOTER MINIMALISTA -->
-    <footer class="footer-elite">
-        <div class="container footer-flex">
+    <!-- ==================== FOOTER (PIE DE PÁGINA) ==================== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
             <div class="footer-brand">
-                <span class="brand-text-small">AURA</span>
-                <p class="footer-copyright">© 2026. The 1% Conversion Architecture.</p>
+                <h3 class="text-gold">Códice de Conversión</h3>
+                <p>La arquitectura del éxito digital.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#el-sistema">El Sistema</a></li>
+                    <li><a href="#historias">Casos de Éxito</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="mailto:soporte@codicedeconversion.com">Soporte</a></li>
+                </ul>
             </div>
             
             <div class="footer-legal">
-                <a href="#">Privacidad</a>
-                <a href="#">Términos</a>
-                <a href="#">Contacto Privado</a>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/terminos">Términos y Condiciones</a></li>
+                    <li><a href="/privacidad">Política de Privacidad</a></li>
+                    <li><a href="/cookies">Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container disclaimer-text">
+                <p><strong>Descargo de responsabilidad:</strong> Los resultados mostrados en esta página no son típicos. Las referencias a ingresos y ventas son aspiracionales. Tu éxito depende de tu esfuerzo, conocimiento del mercado y dedicación. Este sitio no es parte del sitio web de Facebook, Meta, Google o TikTok. No está respaldado por estas compañías de ninguna manera.</p>
+                <p class="copyright">&copy; 2026 Códice de Conversión - J.D. Valeriano. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- NOTA: Aquí iría el enlace al archivo script.js para las animaciones -->
-     <script src="script-aura.js"></script> 
+    <!-- ==================== ARCHIVOS JAVASCRIPT ==================== -->
+    <!-- Preparado para cargar la interactividad -->
+    <script src="assets/js/premium-interactions.js"></script>
 </body>
 </html>
