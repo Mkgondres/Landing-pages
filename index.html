@@ -419,7 +419,8 @@
     </section>
     <div class="whatsapp-float">
         <div class="whatsapp-bubble">¿Dudas antes de inscribirte? Chat Pre-Venta 24/7</div>
-        <a href="#" class="whatsapp-btn">💬</a>
+        <a href="https://wa.me/5541995018745?text=Hola,%20tengo%20una%20duda" target="_blank" class="whatsapp-btn">💬</a>
+
     </div>
 
     <div id="checkoutModal" class="modal">
@@ -437,29 +438,7 @@
                         <option>Estoy desde cero, quiero aprender</option>
                     </select>
                     <button class="btn-primary-gold" onclick="nextToPayment()">Continuar al Pago</button>
-                </div>
-                
-                <div id="payment-phase" style="display:none;">
-                    <h2>Finaliza tu inscripción</h2>
-                    <div class="payment-tabs">
-                        <button onclick="showTab('card')">Tarjeta</button>
-                        <button onclick="showTab('qr')">Pago QR</button>
-                    </div>
-                    <div id="card-tab"><input type="text" placeholder="Número de tarjeta"></div>
-                    <div id="qr-tab" style="display:none; text-align:center;">
-                        <div style="background:white; padding:10px; display:inline-block;">[CÓDIGO QR FICTICIO]</div>
-                        <p>Escanea o copia el código: <strong>X8G-29A-L92</strong></p>
-                    </div>
-                    <button class="btn-primary-gold" onclick="simulatePayment()">Simular Pago Aprobado</button>
-                </div>
 
-                <div id="success-phase" style="display:none; text-align:center;">
-                    <h2 style="color:var(--gold-primary);">¡Pago Aprobado!</h2>
-                    <p>Bienvenido a Arquitectura Élite de Marketing. Los accesos han sido enviados a tu correo.</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
