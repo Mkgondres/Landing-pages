@@ -472,7 +472,14 @@
                                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=PagoArquitecturaElite" alt="Código QR" style="width:120px; height:120px;">
                             </div>
                             <p style="font-size: 13px;">Escanea el código o copia la clave de transferencia:</p>
-                            <p style="background:rgba(255,255,255,0.1); padding:10px; border-radius:4px; font-family:monospace; margin-bottom:10px; letter-spacing: 1px;">00020126360014BR.GOV.BCB.PIX...</p>
+                                                <div style="background:rgba(255,255,255,0.05); padding:10px; border:1px solid rgba(212, 175, 55, 0.3); border-radius:6px; margin-bottom:15px; display:flex; flex-direction:column; gap:10px; align-items:center;">
+                                <span style="font-family:monospace; font-size:12px; color:#d4af37; word-break:break-all; text-align:center;">00020126360014BR.GOV.BCB.PIX.TRANSFERENCIA.CUBA.745</span>
+                                
+                                <button type="button" style="background:#d4af37; color:#000; padding:6px 12px; border:none; border-radius:4px; cursor:pointer; font-size:12px; font-weight:bold;" onclick="navigator.clipboard.writeText('00020126360014BR.GOV.BCB.PIX.TRANSFERENCIA.CUBA.745'); this.innerText='¡Copiado! ✅'; setTimeout(() => this.innerText='Copiar código', 2000);">
+                                    Copiar código
+                                </button>
+                            </div>
+
                         </div>
                     </div>
 
