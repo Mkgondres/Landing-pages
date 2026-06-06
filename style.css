@@ -158,3 +158,144 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
     .hero-cta-group { justify-content: center; flex-direction: column; gap: 16px; }
     .nav-menu { display: none; }
 }
+/* ==================== 7. BARRA DE HERRAMIENTAS ==================== */
+.tools-bar {
+    padding: 40px 0;
+    background: var(--bg-zafiro-medium);
+    border-top: 1px solid rgba(214, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(214, 175, 55, 0.1);
+    text-align: center;
+}
+
+.tools-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.tools-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    opacity: 0.6;
+}
+
+.tool-item {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-silver-blue);
+    transition: var(--transition-premium);
+}
+
+.tool-item:hover {
+    opacity: 1;
+    color: var(--gold-primary);
+    transform: scale(1.05);
+}
+
+/* ==================== 8. SECCIÓN DEL PROBLEMA ==================== */
+.problem-section {
+    padding: 100px 0;
+    background: var(--bg-zafiro-deep);
+    overflow: hidden;
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.problem-headline {
+    font-size: 2.8rem;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.gold-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold-gradient);
+    margin-bottom: 30px;
+}
+
+.problem-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Lista de Puntos de Dolor */
+.pain-points-list {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.pain-points-list li {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-premium);
+}
+
+.success-highlight {
+    background: rgba(214, 175, 55, 0.05) !important;
+    border: 1px solid rgba(214, 175, 55, 0.2) !important;
+}
+
+.status-icon {
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.icon-cross { color: #ff4d4d; }
+.icon-check { color: var(--gold-primary); }
+
+.pain-points-list p {
+    font-size: 1rem;
+    color: var(--text-silver-blue);
+    line-height: 1.5;
+}
+
+/* Estética de la Imagen */
+.placeholder-img-vertical {
+    width: 100%;
+    min-height: 500px;
+    background: #040812;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed rgba(214, 175, 55, 0.2);
+    color: var(--text-muted);
+}
+
+.image-frame-premium {
+    position: relative;
+    padding: 10px;
+    background: linear-gradient(var(--bg-zafiro-medium), var(--bg-zafiro-medium)) padding-box,
+                var(--gold-gradient) border-box;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    box-shadow: -20px 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Problema */
+@media (max-width: 992px) {
+    .problem-grid { grid-template-columns: 1fr; gap: 50px; }
+    .problem-image { order: 2; }
+    .problem-content { order: 1; text-align: center; }
+    .gold-divider { margin-left: auto; margin-right: auto; }
+    .pain-points-list li { text-align: left; }
+    .problem-headline { font-size: 2.2rem; }
+}
