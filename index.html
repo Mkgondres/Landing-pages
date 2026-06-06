@@ -124,7 +124,7 @@
 
         </div>
     </section>
-    <section class="modules-section" id="sistema">
+    <section class="modules-section" id="modulos">
         <div class="container">
             <div class="section-header text-center reveal-scroll">
                 <h2 class="section-title">El mapa de ruta exacto que vas a dominar:</h2>
@@ -437,7 +437,30 @@
                         <option>Quiero ofrecer servicios de marketing</option>
                         <option>Estoy desde cero, quiero aprender</option>
                     </select>
-                    <button class="btn-primary-gold" onclick="nextToPayment()">Continuar al Pago</button>
+                                        <button class="btn-primary-gold" style="width:100%; margin-top:20px;" onclick="nextToPayment()">Continuar al Pago</button>
+                </div> <div id="payment-phase" style="display:none;">
+                    <h2>Finaliza tu inscripción</h2>
+                    <div class="payment-tabs" style="display:flex; gap:10px; margin-bottom:20px;">
+                        <button onclick="showTab('card')" style="flex:1; padding:10px;">Tarjeta</button>
+                        <button onclick="showTab('qr')" style="flex:1; padding:10px;">Pago QR</button>
+                    </div>
+                    <div id="card-tab"><input type="text" placeholder="Número de tarjeta"></div>
+                    <div id="qr-tab" style="display:none; text-align:center;">
+                        <div style="background:white; padding:10px; display:inline-block; margin-bottom:10px; color:black;">[CÓDIGO QR FICTICIO]</div>
+                        <p>Escanea o copia el código: <strong>X8G-29A-L92</strong></p>
+                    </div>
+                    <button class="btn-primary-gold" style="width:100%; margin-top:20px;" onclick="simulatePayment()">Simular Pago Aprobado</button>
+                </div> <div id="success-phase" style="display:none; text-align:center;">
+                    <h2 style="color:var(--gold-primary);">¡Pago Aprobado!</h2>
+                    <p>Bienvenido a Arquitectura Élite de Marketing. Los accesos han sido enviados a tu correo.</p>
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+            <script src="script.js"></script>
+</body>
+</html>
+
 
 
     <script src="script.js"></script>
