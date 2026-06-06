@@ -129,3 +129,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+/* Lógica de Modal */
+const modal = document.getElementById("checkoutModal");
+document.querySelectorAll('.checkout-btn').forEach(btn => btn.onclick = () => modal.style.display = 'flex');
+document.querySelector('.close-modal').onclick = () => modal.style.display = 'none';
+
+function nextToPayment() {
+    document.getElementById('form-phase').style.display = 'none';
+    document.getElementById('payment-phase').style.display = 'block';
+}
+
+function showTab(tab) {
+    document.getElementById('card-tab').style.display = tab === 'card' ? 'block' : 'none';
+    document.getElementById('qr-tab').style.display = tab === 'qr' ? 'block' : 'none';
+}
+
+function simulatePayment() {
+    document.getElementById('payment-phase').style.display = 'none';
+    document.getElementById('success-phase').style.display = 'block';
+}
