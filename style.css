@@ -299,3 +299,103 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
     .pain-points-list li { text-align: left; }
     .problem-headline { font-size: 2.2rem; }
 }
+/* ==================== 9. SECCIÓN DEL SISTEMA (MÓDULOS) ==================== */
+.modules-section {
+    padding: 100px 0;
+    /* Usamos el azul medio para que haga contraste con la sección oscura anterior */
+    background: var(--bg-zafiro-medium); 
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-pure-white);
+}
+
+.center-divider {
+    margin: 0 auto;
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Diseño de la Tarjeta (Glassmorphism Premium) */
+.module-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: var(--transition-premium);
+}
+
+.module-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(214, 175, 55, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(214, 175, 55, 0.1);
+}
+
+/* Número Gigante de Fondo */
+.module-bg-number {
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    font-family: var(--font-luxury);
+    font-size: 7rem;
+    font-weight: 700;
+    color: rgba(214, 175, 55, 0.04);
+    z-index: -1;
+    line-height: 1;
+    transition: var(--transition-premium);
+}
+
+.module-card:hover .module-bg-number {
+    color: rgba(214, 175, 55, 0.1);
+    transform: scale(1.05);
+}
+
+.module-title {
+    font-size: 1.25rem;
+    color: var(--text-pure-white);
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.module-desc {
+    font-size: 0.95rem;
+    color: var(--text-silver-blue);
+    line-height: 1.6;
+}
+
+/* Responsive para los Módulos */
+@media (max-width: 992px) {
+    .modules-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .modules-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .module-card {
+        padding: 30px 20px;
+    }
+}
