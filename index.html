@@ -427,18 +427,21 @@
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div id="modal-body">
-                <div id="form-phase">
-                    <h2>Completa tus datos</h2>
+                                <div id="form-phase">
+                    <h2 style="margin-bottom: 15px;">Completa tus datos</h2>
                     <input type="text" id="name" placeholder="Nombre completo">
-                    <input type="number" id="age" placeholder="Edad">
+                    <input type="email" id="email" placeholder="Correo electrónico">
+                    <input type="tel" id="phone" placeholder="Número de WhatsApp">
                     <select id="goal">
                         <option value="">¿Cuál es tu objetivo?</option>
-                        <option>Tengo un negocio y quiero automatizarlo</option>
-                        <option>Quiero ofrecer servicios de marketing</option>
-                        <option>Estoy desde cero, quiero aprender</option>
+                        <option>Automatizar mi negocio</option>
+                        <option>Ofrecer servicios</option>
+                        <option>Empezar desde cero</option>
                     </select>
-                                        <button class="btn-primary-gold" style="width:100%; margin-top:20px;" onclick="nextToPayment()">Continuar al Pago</button>
-                </div> <div id="payment-phase" style="display:none;">
+                    <button class="btn-primary-gold" style="width:100%; margin-top:15px;" onclick="nextToPayment()">Continuar al Pago</button>
+                </div>
+
+                <div id="payment-phase" style="display:none;">
                     <h2>Finaliza tu inscripción</h2>
                     <div class="payment-tabs" style="display:flex; gap:10px; margin-bottom:20px;">
                         <button onclick="showTab('card')" style="flex:1; padding:10px;">Tarjeta</button>
