@@ -102,3 +102,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Disparo inicial
+    /* ==================== 5. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ) ==================== */
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const questionBtn = item.querySelector('.faq-question');
+        
+        questionBtn.addEventListener('click', () => {
+            // Cerramos las otras preguntas si queremos que solo haya una abierta a la vez
+            const currentlyActive = document.querySelector('.faq-item.active');
+            if (currentlyActive && currentlyActive !== item) {
+                currentlyActive.classList.remove('active');
+                currentlyActive.querySelector('.faq-answer').style.maxHeight = 0;
+            }
+
+            // Alternamos el estado de la pregunta actual
+            item.classList.toggle('active');
+            const answer = item.querySelector('.faq-answer');
+            
+            if (item.classList.contains('active')) {
+                // Le damos la altura exacta que necesita para mostrar el texto
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                // Lo volvems a ocultar
+                answer.style.maxHeight = 0;
+            }
+        });
+    });
