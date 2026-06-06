@@ -1,48 +1,30 @@
-/* ==========================================================================
-   1. VARIABLES DE DISEÑO (AZUL ZAFIRO + BLANCO + DORADO)
-   ========================================================================== */
+/* ==================== 1. VARIABLES GLOBALES (AZUL ZAFIRO PREMIUM) ==================== */
 :root {
-    /* Fondos: Escala de Azul Zafiro de lujo */
-    --bg-zafiro-deep: #060b19;      /* Fondo base de la página, oscuro y magnético */
-    --bg-zafiro-medium: #0d1733;    /* Color de elementos secundarios */
-    --bg-zafiro-light: #14224c;     /* Paneles flotantes */
+    --bg-zafiro-deep: #060b19;      /* Fondo base ultra oscuro */
+    --bg-zafiro-medium: #0d1733;    /* Elementos secundarios */
     
-    /* Acentos e Identidad Metálica Oro */
     --gold-light: #fceabb;
     --gold-primary: #d4af37;
-    --gold-dark: #aa841a;
     --gold-gradient: linear-gradient(135deg, #fceabb 0%, #d4af37 50%, #aa841a 100%);
     
-    /* Textos */
     --text-pure-white: #ffffff;
-    --text-silver-blue: #cbd5e1;    /* Azul grisáceo muy suave para lectura relajada */
+    --text-silver-blue: #cbd5e1;    /* Color de lectura relajado */
     --text-muted: #64748b;
     
-    /* Tipografías */
     --font-luxury: 'Cormorant Garamond', serif;
     --font-clean: 'Inter', sans-serif;
-    
-    /* Animación estándar */
     --transition-premium: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* ==========================================================================
-   2. RESET Y ESTILOS BASE HIGHT-TICKET
-   ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ==================== 2. RESET Y TIPOGRAFÍA ==================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-    scroll-behavior: smooth;
+html { scroll-behavior: smooth; }
+
+body {
     font-family: var(--font-clean);
     background-color: var(--bg-zafiro-deep);
     color: var(--text-silver-blue);
-}
-
-body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
@@ -54,7 +36,6 @@ body {
     padding: 0 24px;
 }
 
-/* Tipografía de Encabezados */
 h1 {
     font-family: var(--font-luxury);
     color: var(--text-pure-white);
@@ -62,27 +43,16 @@ h1 {
     line-height: 1.15;
 }
 
-/* Clases de Utilidad de Color */
 .text-gold { color: var(--gold-primary); }
-
 .text-gradient-gold {
     background: var(--gold-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
     display: inline-block;
 }
 
-/* ==========================================================================
-   3. BOTONES Y ACCIONES INTERACTIVAS
-   ========================================================================== */
-button {
-    font-family: var(--font-clean);
-    cursor: pointer;
-    border: none;
-    background: none;
-    transition: var(--transition-premium);
-}
+/* ==================== 3. BOTONES ==================== */
+button { font-family: var(--font-clean); cursor: pointer; border: none; background: none; transition: var(--transition-premium); }
 
 .btn-outline-gold {
     border: 1px solid var(--gold-primary);
@@ -94,16 +64,14 @@ button {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 .btn-outline-gold:hover {
     background: rgba(214, 175, 55, 0.08);
-    box-shadow: 0 0 20px rgba(214, 175, 55, 0.2);
     transform: translateY(-1px);
 }
 
 .btn-primary-gold {
     background: var(--gold-gradient);
-    color: #050a14; /* Texto ultra oscuro para contraste con el oro */
+    color: #050a14;
     padding: 16px 36px;
     border-radius: 4px;
     font-weight: 600;
@@ -113,235 +81,80 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 4px 15px rgba(214, 175, 55, 0.2);
 }
+.btn-primary-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(214, 175, 55, 0.4); }
+.btn-arrow { transition: transform 0.3s ease; }
+.btn-primary-gold:hover .btn-arrow { transform: translateX(6px); }
 
-.btn-primary-gold:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(214, 175, 55, 0.4);
-}
-
-.btn-arrow {
-    transition: transform 0.3s ease;
-}
-
-.btn-primary-gold:hover .btn-arrow {
-    transform: translateX(6px);
-}
-
-/* ==========================================================================
-   4. BARRA DE NAVEGACIÓN (CON EFECTO CRISTAL FILTRADO)
-   ========================================================================== */
+/* ==================== 4. BARRA DE NAVEGACIÓN ==================== */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 20px 0;
-    background: rgba(6, 11, 25, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    padding: 20px 0; background: rgba(6, 11, 25, 0.7);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
     transition: var(--transition-premium);
 }
-
-.nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.brand-logo {
-    font-family: var(--font-luxury);
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--text-pure-white);
-    letter-spacing: 0.5px;
-}
-
-.nav-menu {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-}
-
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+.brand-logo { font-family: var(--font-luxury); font-size: 1.6rem; font-weight: 700; color: var(--text-pure-white); }
+.nav-menu { display: flex; gap: 32px; list-style: none; }
 .nav-link {
-    text-decoration: none;
-    color: var(--text-silver-blue);
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    transition: var(--transition-premium);
+    text-decoration: none; color: var(--text-silver-blue); font-size: 0.85rem;
+    font-weight: 500; text-transform: uppercase; letter-spacing: 1px; position: relative;
 }
-
-.nav-link:hover {
-    color: var(--text-pure-white);
-}
-
-/* Línea animada inferior al pasar el mouse */
+.nav-link:hover { color: var(--text-pure-white); }
 .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1.5px;
-    bottom: -6px;
-    left: 0;
-    background: var(--gold-gradient);
-    transition: var(--transition-premium);
+    content: ''; position: absolute; width: 0; height: 1.5px;
+    bottom: -6px; left: 0; background: var(--gold-gradient); transition: var(--transition-premium);
 }
+.nav-link:hover::after { width: 100%; }
 
-.nav-link:hover::after {
-    width: 100%;
-}
-
-/* ==========================================================================
-   5. MAQUETACIÓN E ILUMINACIÓN DEL HERO
-   ========================================================================== */
+/* ==================== 5. SECCIÓN HERO (PORTADA) ==================== */
 .hero-section {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 140px 0 80px;
-    background: radial-gradient(circle at 80% 20%, var(--bg-zafiro-medium) 0%, var(--bg-zafiro-deep) 100%);
+    position: relative; min-height: 100vh; display: flex; align-items: center;
+    padding: 140px 0 80px; background: radial-gradient(circle at 80% 20%, var(--bg-zafiro-medium) 0%, var(--bg-zafiro-deep) 100%);
 }
-
 .hero-radial-glow {
-    position: absolute;
-    top: -10%;
-    left: 25%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(214, 175, 55, 0.05) 0%, rgba(6, 11, 25, 0) 70%);
-    z-index: 0;
-    filter: blur(60px);
-    pointer-events: none;
+    position: absolute; top: -10%; left: 25%; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(214, 175, 55, 0.05) 0%, rgba(6, 11, 25, 0) 70%); filter: blur(60px); pointer-events: none;
 }
-
-.hero-grid {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 48px;
-    align-items: center;
-}
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
 
 .badge-premium {
-    display: inline-block;
-    padding: 6px 16px;
-    background: rgba(214, 175, 55, 0.08);
-    border: 1px solid rgba(214, 175, 55, 0.25);
-    color: var(--gold-light);
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 24px;
+    display: inline-block; padding: 6px 16px; background: rgba(214, 175, 55, 0.08);
+    border: 1px solid rgba(214, 175, 55, 0.25); color: var(--gold-light);
+    border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 24px;
 }
+.hero-title { font-size: 3.8rem; margin-bottom: 20px; }
+.hero-subtitle { font-size: 1.05rem; line-height: 1.7; margin-bottom: 40px; max-width: 540px; }
 
-.hero-title {
-    font-size: 3.8rem;
-    margin-bottom: 20px;
-}
-
-.hero-subtitle {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 40px;
-    max-width: 540px;
-}
-
-.hero-cta-group {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 32px;
-}
-
-.btn-play-video {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--text-pure-white);
-    font-weight: 500;
-    font-size: 0.95rem;
-}
-
+.hero-cta-group { display: flex; align-items: center; gap: 24px; margin-bottom: 32px; }
+.btn-play-video { display: flex; align-items: center; gap: 12px; color: var(--text-pure-white); font-weight: 500; }
 .play-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--gold-primary);
-    border-radius: 50%;
-    font-size: 0.8rem;
-    padding-left: 3px; /* Corrección óptica del triángulo de play */
-    transition: var(--transition-premium);
+    display: flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+    background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gold-primary); border-radius: 50%; font-size: 0.8rem; padding-left: 3px; transition: var(--transition-premium);
 }
+.btn-play-video:hover .play-icon { background: var(--gold-gradient); color: #050a14; transform: scale(1.08); }
+.hero-guarantee { font-size: 0.8rem; color: var(--text-muted); }
 
-.btn-play-video:hover .play-icon {
-    background: var(--gold-gradient);
-    color: #050a14;
-    transform: scale(1.08);
-    box-shadow: 0 0 20px rgba(214, 175, 55, 0.3);
-}
-
-.hero-guarantee {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-
-/* Contenedor Visual Fotorrealista */
-.visual-container {
-    background: var(--bg-zafiro-medium);
-    border-radius: 12px;
-    padding: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.image-glow-gold {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(214, 175, 55, 0.05);
-}
-
+/* FOTO PLACEHOLDER */
+.visual-container { background: var(--bg-zafiro-medium); border-radius: 12px; padding: 8px; border: 1px solid rgba(255, 255, 255, 0.05); }
+.image-glow-gold { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(214, 175, 55, 0.05); }
 .visual-placeholder {
-    width: 100%;
-    min-height: 380px;
-    background: #040812;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    border: 1px dashed rgba(214, 175, 55, 0.15);
+    width: 100%; min-height: 380px; background: #040812; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px;
+    font-size: 0.85rem; color: var(--text-muted); border: 1px dashed rgba(214, 175, 55, 0.15);
 }
 
-/* ==========================================================================
-   6. EFECTOS ESPECIALES DE ANIMACIÓN
-   ========================================================================== */
-@keyframes pulseButton {
-    0% { box-shadow: 0 0 0 0 rgba(214, 175, 55, 0.4); }
-    70% { box-shadow: 0 0 0 12px rgba(214, 175, 55, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(214, 175, 55, 0); }
-}
+@keyframes pulseButton { 0% { box-shadow: 0 0 0 0 rgba(214, 175, 55, 0.4); } 70% { box-shadow: 0 0 0 12px rgba(214, 175, 55, 0); } 100% { box-shadow: 0 0 0 0 rgba(214, 175, 55, 0); } }
+.pulse-effect { animation: pulseButton 2.5s infinite; }
 
-.pulse-effect {
-    animation: pulseButton 2.5s infinite;
-}
-
-/* Responsive inicial para el esqueleto del Hero */
+/* Responsive Portada */
 @media (max-width: 992px) {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
     .hero-title { font-size: 2.8rem; }
     .hero-subtitle { margin-left: auto; margin-right: auto; }
     .hero-cta-group { justify-content: center; flex-direction: column; gap: 16px; }
-    .nav-menu { display: none; } /* El menú de navegación se optimizará después */
+    .nav-menu { display: none; }
 }
