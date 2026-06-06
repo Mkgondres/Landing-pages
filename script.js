@@ -77,3 +77,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+    /* ==================== 4. ANIMACIÓN DE REVELACIÓN AL HACER SCROLL ==================== */
+    // Esto hará que la sección aparezca suavemente cuando el usuario baje la página
+    const revealElements = document.querySelectorAll('.reveal-scroll');
+
+    const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        revealElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < triggerBottom) {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Configuración inicial de los elementos para la animación
+    revealElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.8s ease-out';
+    });
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Disparo inicial
