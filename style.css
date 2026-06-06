@@ -399,3 +399,105 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
         padding: 30px 20px;
     }
 }
+/* ==================== 10. SECCIÓN DE BONOS ==================== */
+.bonuses-section {
+    padding: 100px 0;
+    /* Un degradado suave para conectar con la siguiente sección */
+    background: linear-gradient(180deg, var(--bg-zafiro-medium) 0%, var(--bg-zafiro-deep) 100%);
+    border-top: 1px solid rgba(214, 175, 55, 0.1);
+    position: relative;
+}
+
+.bonuses-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-pure-white);
+    margin-bottom: 25px;
+}
+
+/* Animación y Brillo de la Caja de Regalo */
+.gift-box-icon {
+    font-size: 4.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    position: relative;
+    animation: floatGift 3s ease-in-out infinite;
+}
+
+.icon-glow {
+    display: block;
+    filter: drop-shadow(0 0 25px rgba(214, 175, 55, 0.7));
+}
+
+@keyframes floatGift {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-12px) scale(1.05); }
+}
+
+.bonuses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Tarjetas de Bonos (Con un leve tinte dorado respecto a las anteriores) */
+.bonus-card {
+    background: rgba(214, 175, 55, 0.03);
+    border: 1px solid rgba(214, 175, 55, 0.15);
+    border-radius: 12px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-premium);
+}
+
+.bonus-card:hover {
+    transform: translateY(-8px);
+    background: rgba(214, 175, 55, 0.06);
+    border-color: rgba(214, 175, 55, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(214, 175, 55, 0.15);
+}
+
+/* Etiquetas (Badges) */
+.bonus-badge {
+    display: inline-block;
+    background: rgba(214, 175, 55, 0.08);
+    color: var(--gold-primary);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(214, 175, 55, 0.3);
+}
+
+/* Resaltado especial para el Asistente IA */
+.highlight-badge {
+    background: var(--gold-gradient);
+    color: #050a14;
+    border: none;
+    box-shadow: 0 0 15px rgba(214, 175, 55, 0.4);
+}
+
+.bonus-title {
+    font-size: 1.4rem;
+    color: var(--text-pure-white);
+    margin-bottom: 15px;
+}
+
+.bonus-desc {
+    font-size: 1rem;
+    color: var(--text-silver-blue);
+    line-height: 1.6;
+}
+
+/* Responsive para la sección de bonos */
+@media (max-width: 768px) {
+    .bonuses-grid {
+        grid-template-columns: 1fr;
+    }
+    .bonus-card {
+        padding: 30px 20px;
+    }
+}
