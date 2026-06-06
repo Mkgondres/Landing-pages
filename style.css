@@ -830,3 +830,13 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
     margin: 0 auto;
     opacity: 0.6;
 }
+/* WhatsApp Flotante */
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 9999; display: flex; align-items: center; gap: 15px; }
+.whatsapp-bubble { background: white; color: #333; padding: 10px 15px; border-radius: 20px; font-size: 0.8rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.whatsapp-btn { background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+/* Modal */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; align-items: center; justify-content: center; }
+.modal-content { background: var(--bg-zafiro-medium); padding: 40px; border-radius: 12px; width: 90%; max-width: 500px; color: white; border: 1px solid var(--gold-primary); }
+input, select { width: 100%; padding: 12px; margin: 10px 0; background: rgba(255,255,255,0.05); border: 1px solid #333; color: white; }
+.payment-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
