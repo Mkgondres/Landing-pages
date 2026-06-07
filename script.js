@@ -165,8 +165,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ==================== 7. FUNCIONES DEL FORMULARIO ==================== */
 window.nextToPayment = function() {
+    // 1. Leer los datos de las cajas
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const goal = document.getElementById('goal').value;
+
+    // 2. Comprobar si falta alguno
+    if (name === "" || email === "" || phone === "" || goal === "") {
+        // Muestra una alerta en pantalla si faltan datos
+        alert("⚠️ Por favor, completa todos los espacios antes de continuar al pago.");
+        return; // Esto detiene la acción y evita que pase a la fase 2
+    }
+
+    // 3. Si todo está lleno, avanza a la siguiente fase
     document.getElementById('form-phase').style.display = 'none';
     document.getElementById('payment-phase').style.display = 'block';
+};
+
 };
 
 window.showTab = function(tab) {
