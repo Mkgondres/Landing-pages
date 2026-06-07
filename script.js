@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
             modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) destroyModal(); });
         });
     }
-});
     /* ==================== 4. ANIMACIÓN DE REVELACIÓN AL HACER SCROLL ==================== */
     // Esto hará que la sección aparezca suavemente cuando el usuario baje la página
     const revealElements = document.querySelectorAll('.reveal-scroll');
@@ -130,21 +129,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 /* Lógica de Modal */
-const modal = document.getElementById("checkoutModal");
-document.querySelectorAll('.checkout-btn').forEach(btn => btn.onclick = () => modal.style.display = 'flex');
-document.querySelector('.close-modal').onclick = () => modal.style.display = 'none';
+    /* ==================== 6. LÓGICA DE MODAL DE PAGO ==================== */
+    const modal = document.getElementById("checkoutModal");
+    const checkoutButtons = document.querySelectorAll('.checkout-btn');
+    const closeModalBtn = document.querySelector('.close-modal');
 
-function nextToPayment() {
+    // Abrir modal
+    checkoutButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            if(modal) {
+                modal.style.display = 'flex';
+                setTimeout(() => modal.classList.add('show'), 10);
+            }
+        });
+    });
+
+    // Cerrar modal con la X
+    if(closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 300);
+        });
+    }
+
+    // Cerrar modal al tocar fuera
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+    });
+
+}); /* AQUÍ CERRAMOS EL BLOQUE PRINCIPAL QUE BORRAMOS EN EL PASO 2 */
+
+/* ==================== 7. FUNCIONES DEL FORMULARIO ==================== */
+window.nextToPayment = function() {
     document.getElementById('form-phase').style.display = 'none';
     document.getElementById('payment-phase').style.display = 'block';
-}
+};
 
-function showTab(tab) {
+window.showTab = function(tab) {
     document.getElementById('card-tab').style.display = tab === 'card' ? 'block' : 'none';
     document.getElementById('qr-tab').style.display = tab === 'qr' ? 'block' : 'none';
-}
+};
 
-function simulatePayment() {
+window.simulatePayment = function() {
     document.getElementById('payment-phase').style.display = 'none';
     document.getElementById('success-phase').style.display = 'block';
-}
+};
