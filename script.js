@@ -183,8 +183,6 @@ window.nextToPayment = function() {
     document.getElementById('payment-phase').style.display = 'block';
 };
 
-};
-
 window.showTab = function(tab) {
     document.getElementById('card-tab').style.display = tab === 'card' ? 'block' : 'none';
     document.getElementById('qr-tab').style.display = tab === 'qr' ? 'block' : 'none';
