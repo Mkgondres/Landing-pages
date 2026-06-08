@@ -96,7 +96,7 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
 }
 .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
 .brand-logo { font-family: var(--font-luxury); font-size: 1.6rem; font-weight: 700; color: var(--text-pure-white); }
-.nav-menu { display: flex; gap: 32px; list-style: none; }
+.nav-menu { display: flex !important; gap: 32px; list-style: none; align-items: center; }
 .nav-link {
     text-decoration: none; color: var(--text-silver-blue); font-size: 0.85rem;
     font-weight: 500; text-transform: uppercase; letter-spacing: 1px; position: relative;
@@ -898,7 +898,7 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
 
     /* 4. Ocultar el menú de texto SOLO en pantallas de celular reales */
     .nav-menu {
-        display: none;
+        display: none; !important; 
     }
 }
 
