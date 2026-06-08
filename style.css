@@ -1,3 +1,6 @@
+* {
+    border: 1px solid red !important;
+}
 /* ==================== 1. VARIABLES GLOBALES (AZUL ZAFIRO PREMIUM) ==================== */
 :root {
     --bg-zafiro-deep: #060b19;      /* Fondo base ultra oscuro */
