@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentlyActive = document.querySelector('.faq-item.active');
             if (currentlyActive && currentlyActive !== item) {
                 currentlyActive.classList.remove('active');
-                currentlyActive.querySelector('.faq-answer').style.maxHeight = 0;
+                currentlyActive.querySelector('.faq-answer').style.maxHeight = null;
             }
 
             // Alternamos el estado de la pregunta actual
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 answer.style.maxHeight = answer.scrollHeight + "px";
             } else {
                 // Lo volvems a ocultar
-                answer.style.maxHeight = 0;
+                answer.style.maxHeight = null;
             }
         });
     });
