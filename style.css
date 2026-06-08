@@ -872,4 +872,18 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
     color: var(--text-pure-white);
     transform: scale(1.1);
 }
+/* Responsive Navbar (Móviles) */
+@media (max-width: 768px) {
+    /* 1. Reducimos el nombre para que no empuje al botón */
+    .brand-logo {
+        font-size: 1.15rem;
+    }
+    
+    /* 2. Hacemos el botón un poco más compacto */
+    .nav-action .btn-outline-gold {
+        padding: 8px 12px;
+        font-size: 0.7rem;
+        white-space: nowrap; /* Evita que el texto del botón se rompa */
+    }
+}
 
