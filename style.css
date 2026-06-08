@@ -19,7 +19,7 @@
 /* ==================== 2. RESET Y TIPOGRAFÍA ==================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
     font-family: var(--font-clean);
@@ -112,7 +112,9 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
 .hero-section {
     position: relative; min-height: 100vh; display: flex; align-items: center;
     padding: 140px 0 80px; background: radial-gradient(circle at 80% 20%, var(--bg-zafiro-medium) 0%, var(--bg-zafiro-deep) 100%);
+    overflow: hidden; /* <-- ESTA ES LA MAGIA QUE CORTA EL BRILLO SOBRANTE */
 }
+
 .hero-radial-glow {
     position: absolute; top: -10%; left: 25%; width: 500px; height: 500px;
     background: radial-gradient(circle, rgba(214, 175, 55, 0.05) 0%, rgba(6, 11, 25, 0) 70%); filter: blur(60px); pointer-events: none;
