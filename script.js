@@ -193,12 +193,17 @@ window.simulatePayment = function() {
     document.getElementById('success-phase').style.display = 'block';
 };
 /* ==========================================================================
-   MOTOR DEL CRONÓMETRO DE URGENCIA (ENCENDIDO INMEDIATO + MEMORIA)
+   MOTOR DE URGENCIA REAL (CAMBIO DE PRECIO AUTOMÁTICO AL LLEGAR A CERO)
    ========================================================================== */
 function startTimer() {
     const hElement = document.getElementById('hours');
     const mElement = document.getElementById('minutes');
     const sElement = document.getElementById('seconds');
+    
+    const timerText = document.querySelector('.timer-text');
+    const finalPrice = document.querySelector('.final-price');
+    const discountText = document.querySelector('.discount-text');
+    const totalValue = document.querySelector('.total-value');
 
     if (!hElement || !mElement || !sElement) return;
 
@@ -207,20 +212,41 @@ function startTimer() {
     let endTime = localStorage.getItem(storageKey);
     let now = new Date().getTime();
 
-    if (!endTime || now > endTime) {
+    if (!endTime) {
         endTime = now + duration;
         localStorage.setItem(storageKey, endTime);
     }
 
-    // 1. Separamos el cálculo en su propia función
     function updateTimer() {
         now = new Date().getTime();
         let distance = endTime - now;
 
         if (distance <= 0) {
-            endTime = now + duration;
-            localStorage.setItem(storageKey, endTime);
-            distance = duration;
+            hElement.textContent = '00';
+            mElement.textContent = '00';
+            sElement.textContent = '00';
+            
+            if (timerText) {
+                timerText.textContent = "❌ LA OFERTA EXCLUSIVA HA EXPIRADO";
+                timerText.style.color = "#64748b"; 
+            }
+            
+            if (finalPrice) {
+                finalPrice.innerHTML = '$4,970 <span class="currency">USD</span>';
+                finalPrice.style.color = '#ffffff'; 
+                finalPrice.style.textShadow = 'none';
+            }
+            
+            if (discountText) {
+                discountText.textContent = "El periodo de descuento ha finalizado. Inscripciones abiertas a precio regular.";
+                discountText.style.color = "#64748b";
+            }
+            
+            if (totalValue) {
+                totalValue.style.display = 'none';
+            }
+            
+            return true; 
         }
 
         const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -230,13 +256,19 @@ function startTimer() {
         hElement.textContent = String(hrs).padStart(2, '0');
         mElement.textContent = String(mins).padStart(2, '0');
         sElement.textContent = String(secs).padStart(2, '0');
+        return false;
     }
 
-    // 2. ¡EL TRUCO! Ejecutamos el cálculo instantáneamente una vez (elimina el salto visual)
-    updateTimer();
-
-    // 3. Dejamos que el motor siga su ritmo normal cada 1 segundo
-    setInterval(updateTimer, 1000);
+    const isExpired = updateTimer();
+    
+    if (!isExpired) {
+        const interval = setInterval(() => {
+            const expired = updateTimer();
+            if (expired) {
+                clearInterval(interval); 
+            }
+        }, 1000);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', startTimer);
