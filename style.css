@@ -997,3 +997,113 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
         gap: 20px;
     }
 }
+/* ==========================================================================
+   16. CRONÓMETRO FLOTANTE (SÓLIDO Y PREMIUM)
+   ========================================================================== */
+.floating-timer-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #030710; /* Fondo zafiro ultra oscuro y sólido */
+    border-top: 3px solid #ff3333; /* Línea roja gruesa para que "salte" a la vista */
+    z-index: 9999;
+    padding: 12px 0;
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.9); /* Sombra pesada para separarlo de la página */
+}
+
+.timer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.timer-text {
+    color: #ff4d4d;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.countdown-timer-sm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-box-sm {
+    background: #0a1122;
+    border: 1px solid rgba(214, 175, 55, 0.5); /* Borde dorado */
+    border-radius: 6px;
+    padding: 6px 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.time-box-sm span {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.time-box-sm small {
+    color: #d6af37;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.colon-sm {
+    color: #d6af37;
+    font-weight: bold;
+    font-size: 1.3rem;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 
+    50% { opacity: 0.2; } 
+}
+
+/* ==========================================================================
+   17. PROTECCIÓN DEL FOOTER Y WHATSAPP (AJUSTES ANTI-CHOQUE)
+   ========================================================================== */
+body {
+    padding-bottom: 75px; /* Evita que el reloj tape el final de tu página */
+}
+
+/* Levantamos el botón de WhatsApp para que flote encima del reloj */
+.whatsapp-bubble,
+.float-button {
+    bottom: 85px !important; 
+    transition: bottom 0.3s ease;
+}
+
+/* RESPONSIVE MÓVILES */
+@media (max-width: 768px) {
+    .timer-content { 
+        flex-direction: column; 
+        gap: 6px; 
+    }
+    .timer-text { 
+        font-size: 0.75rem; 
+    }
+    .time-box-sm {
+        padding: 4px 8px;
+    }
+    .time-box-sm span {
+        font-size: 1.1rem;
+    }
+    body { 
+        padding-bottom: 90px; 
+    }
+    .whatsapp-bubble,
+    .float-button { 
+        bottom: 100px !important; /* Lo subimos más en celulares */
+    }
+}
