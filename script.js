@@ -207,7 +207,7 @@ function startTimer() {
 
     if (!hElement || !mElement || !sElement) return;
 
-    const duration = (2 * 3600 + 45 * 60) * 1000; 
+    const duration = 5 * 1000; 
     const storageKey = 'eliteOfferEndTime';
     let endTime = localStorage.getItem(storageKey);
     let now = new Date().getTime();
