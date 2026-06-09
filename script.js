@@ -193,53 +193,50 @@ window.simulatePayment = function() {
     document.getElementById('success-phase').style.display = 'block';
 };
 /* ==========================================================================
-   MOTOR DEL CRONÓMETRO DE URGENCIA (EVERGREEN CON MEMORIA)
+   MOTOR DEL CRONÓMETRO DE URGENCIA (ENCENDIDO INMEDIATO + MEMORIA)
    ========================================================================== */
 function startTimer() {
     const hElement = document.getElementById('hours');
     const mElement = document.getElementById('minutes');
     const sElement = document.getElementById('seconds');
 
-    // Si no encuentra el reloj en la página, se detiene para no dar error
     if (!hElement || !mElement || !sElement) return;
 
-    // Tiempo total de la oferta en milisegundos (2 horas y 45 minutos)
     const duration = (2 * 3600 + 45 * 60) * 1000; 
-    
-    // El "ticket" secreto que le guardamos al cliente en su navegador
     const storageKey = 'eliteOfferEndTime';
     let endTime = localStorage.getItem(storageKey);
     let now = new Date().getTime();
 
-    // Si es un cliente NUEVO (no tiene ticket) o si ya expiró su tiempo de antes
     if (!endTime || now > endTime) {
         endTime = now + duration;
-        localStorage.setItem(storageKey, endTime); // Le guardamos la hora límite exacta
+        localStorage.setItem(storageKey, endTime);
     }
 
-    // El motor que hace correr los números cada segundo
-    setInterval(() => {
+    // 1. Separamos el cálculo en su propia función
+    function updateTimer() {
         now = new Date().getTime();
         let distance = endTime - now;
 
-        // Si el tiempo llega a cero, reiniciamos el ciclo silenciosamente
         if (distance <= 0) {
             endTime = now + duration;
             localStorage.setItem(storageKey, endTime);
             distance = duration;
         }
 
-        // Matemáticas para convertir milisegundos a horas, minutos y segundos
         const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const secs = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Añadimos el cero a la izquierda si es menor a 10
         hElement.textContent = String(hrs).padStart(2, '0');
         mElement.textContent = String(mins).padStart(2, '0');
         sElement.textContent = String(secs).padStart(2, '0');
-    }, 1000);
+    }
+
+    // 2. ¡EL TRUCO! Ejecutamos el cálculo instantáneamente una vez (elimina el salto visual)
+    updateTimer();
+
+    // 3. Dejamos que el motor siga su ritmo normal cada 1 segundo
+    setInterval(updateTimer, 1000);
 }
 
-// Arranca el reloj exactamente en el momento en que la página termina de cargar
 document.addEventListener('DOMContentLoaded', startTimer);
