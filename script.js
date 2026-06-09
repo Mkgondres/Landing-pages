@@ -207,9 +207,13 @@ function startTimer() {
 
     if (!hElement || !mElement || !sElement) return;
 
+    // 1. CORRECCIÓN: Agregado el asterisco para la multiplicación
     const duration = (2 * 3600 + 45 * 60) * 1000; 
     const storageKey = 'eliteOfferEndTime';
-    let endTime = localStorage.getItem(storageKey);
+    
+    // 2. MEJORA: Convertir el valor de localStorage a un número entero
+    let storedEndTime = localStorage.getItem(storageKey);
+    let endTime = storedEndTime ? parseInt(storedEndTime, 10) : null;
     let now = new Date().getTime();
 
     if (!endTime) {
