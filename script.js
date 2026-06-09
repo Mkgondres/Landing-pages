@@ -192,3 +192,36 @@ window.simulatePayment = function() {
     document.getElementById('payment-phase').style.display = 'none';
     document.getElementById('success-phase').style.display = 'block';
 };
+/* ==========================================================================
+   MOTOR DEL CRONÓMETRO DE URGENCIA (EVERGREEN)
+   ========================================================================== */
+let totalSeconds = 2 * 3600 + 45 * 60; // 2 horas y 45 minutos
+
+function startTimer() {
+    const hElement = document.getElementById('hours');
+    const mElement = document.getElementById('minutes');
+    const sElement = document.getElementById('seconds');
+
+    // Si por alguna razón no encuentra el reloj en la página, detiene la función para no dar error
+    if (!hElement || !mElement || !sElement) return;
+
+    setInterval(() => {
+        if (totalSeconds <= 0) {
+            totalSeconds = 2 * 3600 + 45 * 60; // Reinicio silencioso si llega a cero
+        }
+
+        totalSeconds--;
+
+        const hrs = Math.floor(totalSeconds / 3600);
+        const mins = Math.floor((totalSeconds % 3600) / 60);
+        const secs = totalSeconds % 60;
+
+        // Añade un '0' a la izquierda si el número es menor a 10 (ej: 09, 08...)
+        hElement.textContent = String(hrs).padStart(2, '0');
+        mElement.textContent = String(mins).padStart(2, '0');
+        sElement.textContent = String(secs).padStart(2, '0');
+    }, 1000);
+}
+
+// Arranca el reloj exactamente en el momento en que la página termina de cargar
+document.addEventListener('DOMContentLoaded', startTimer);
