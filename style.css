@@ -159,27 +159,33 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
     .hero-cta-group { justify-content: center; flex-direction: column; gap: 16px; }
 }
 /* ==================== 7. BARRA DE PLATAFORMAS (CAJA PREMIUM A COLOR) ==================== */
+/* ==========================================================================
+   7. BARRA DE PLATAFORMAS (CAJA CHAMPÁN Y DISEÑO 3x3 ESTRICTO)
+   ========================================================================== */
 .tools-bar {
-    padding: 50px 0;
-    background: transparent; /* Dejamos que se vea tu fondo oscuro principal */
+    padding: 60px 0;
+    background: transparent; 
     text-align: center;
 }
 
 .tools-title {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: var(--text-muted);
-    margin-bottom: 25px;
-    font-weight: 600;
+    color: var(--gold-light); /* <-- El texto ahora es dorado claro */
+    margin-bottom: 30px;
+    font-weight: 700;
 }
 
-/* El Cuadro Contenedor Premium */
+/* El Cuadro Contenedor Premium Champán */
 .tools-grid {
-    background: rgba(255, 255, 255, 0.03); /* Fondo ligeramente más claro para contrastar */
-    border: 1px solid rgba(214, 175, 55, 0.2); /* Borde dorado súper sutil */
-    border-radius: 16px; /* Bordes redondeados elegantes */
-    padding: 35px 50px;
+    /* Un degradado sutil de crema a dorado claro para máximo lujo */
+    background: linear-gradient(135deg, #fdf5e6 0%, #fceabb 100%); 
+    border: 1px solid var(--gold-primary); 
+    border-radius: 16px; 
+    padding: 40px;
+    
+    /* Diseño por defecto para PC */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,33 +193,45 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
     flex-wrap: wrap;
     max-width: 1000px;
     margin: 0 auto;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 15px 35px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px); /* Efecto de cristal esmerilado */
+    
+    /* Sombra exterior oscura y brillo interior blanco */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
-/* Los logos con sus colores originales y brillantes */
+/* Los logos resaltando al máximo */
 .tool-item img {
-    max-height: 40px; /* Tamaño uniforme */
+    max-height: 45px; 
     width: auto;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.6)); /* Sombrita para que resalten del fondo */
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15)); /* Sombrita para separarlos del fondo claro */
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Efecto al pasar el mouse */
 .tool-item:hover img {
-    transform: scale(1.15) translateY(-5px); /* Se levantan ligeramente */
-    filter: drop-shadow(0 8px 15px rgba(214, 175, 55, 0.2)); /* Brillo dorado suave */
+    transform: scale(1.15) translateY(-5px); 
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
 }
 
-/* RESPONSIVE MÓVILES */
+/* ========================================= */
+/* CUADRÍCULA ESTRICTA PARA MÓVILES (3 y 3) */
+/* ========================================= */
 @media (max-width: 768px) {
-    .tools-grid { 
-        padding: 25px 20px;
-        gap: 25px 35px; /* Menos espacio en el teléfono */
+    .tools-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* Fuerzan 3 columnas matemáticas */
+        gap: 25px 15px !important; /* Espacio vertical y horizontal */
+        padding: 30px 15px;
         border-radius: 12px;
     }
-    .tool-item img { 
-        max-height: 30px; /* Más pequeños para que quepan perfectos */
+    
+    .tool-item img {
+        max-height: 32px; /* Tamaño exacto para que quepan 3 en pantalla */
+        display: block;
+        margin: 0 auto; /* Centrados perfectamente */
+    }
+    
+    .tools-title {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
     }
 }
 
@@ -1107,18 +1125,16 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
 @keyframes blink { 
     50% { opacity: 0.2; } 
 }
-
 /* ==========================================================================
-   17. PROTECCIÓN DEL FOOTER Y WHATSAPP (AJUSTES ANTI-CHOQUE)
+   17. PROTECCIÓN DEL FOOTER Y WHATSAPP (AJUSTES ANTI-CHOQUE EXTREMO)
    ========================================================================== */
 body {
-    padding-bottom: 75px; /* Evita que el reloj tape el final de tu página */
+    padding-bottom: 75px; 
 }
 
-/* Levantamos el botón de WhatsApp para que flote encima del reloj */
 .whatsapp-bubble,
 .whatsapp-float {
-    bottom: 85px !important; 
+    bottom: 90px !important; 
     transition: bottom 0.3s ease;
 }
 
@@ -1142,6 +1158,7 @@ body {
     }
     .whatsapp-bubble,
     .whatsapp-float { 
-        bottom: 100px !important; /* Lo subimos más en celulares */
+        bottom: 130px !important; /* <--- Levantado agresivamente para que el reloj respire */
     }
 }
+
