@@ -1096,7 +1096,7 @@ body {
 
 /* Levantamos el botón de WhatsApp para que flote encima del reloj */
 .whatsapp-bubble,
-.float-button {
+.whatsapp-float {
     bottom: 85px !important; 
     transition: bottom 0.3s ease;
 }
@@ -1120,7 +1120,7 @@ body {
         padding-bottom: 90px; 
     }
     .whatsapp-bubble,
-    .float-button { 
+    .whatsapp-float { 
         bottom: 100px !important; /* Lo subimos más en celulares */
     }
 }
