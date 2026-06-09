@@ -96,7 +96,6 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
 }
 .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
 .brand-logo { font-family: var(--font-luxury); font-size: 1.6rem; font-weight: 700; color: var(--text-pure-white); }
-.nav-menu { display: flex !important; gap: 32px; list-style: none; align-items: center; }
 .nav-link {
     text-decoration: none; color: var(--text-silver-blue); font-size: 0.85rem;
     font-weight: 500; text-transform: uppercase; letter-spacing: 1px; position: relative;
@@ -873,36 +872,54 @@ button { font-family: var(--font-clean); cursor: pointer; border: none; backgrou
     color: var(--text-pure-white);
     transform: scale(1.1);
 }
-/* ========================================= */
-/* ========================================= */
-/* CORRECCIONES EXACTAS PARA MÓVILES (768px) */
-/* ========================================= */
+/* ==========================================================================
+   REGLAS ESTRICTAS DEL MENÚ Y CORRECCIONES PARA MÓVILES
+   ========================================================================== */
+
+/* 1. TERRITORIO DE COMPUTADORAS Y TABLETS GRANDES (Más de 768px) */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex !important;
+        gap: 32px;
+        list-style: none;
+        align-items: center;
+    }
+}
+
+/* 2. TERRITORIO DE CELULARES (Menos de 768px) */
 @media (max-width: 768px) {
-    /* 1. Obligar a la barra a no sumar su padding al 100% */
+    /* Ocultar los textos del menú obligatoriamente (Sin puntos y comas atravesados) */
+    .nav-menu {
+        display: none !important; 
+    }
+    
+    /* Le damos todo el espacio al Logo y al Botón */
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Obligar a la barra a no sumar su padding al 100% */
     .navbar {
         box-sizing: border-box;
         padding: 15px 20px;
         width: 100%;
     }
     
-    /* 2. Ocultar la burbuja gigante de WhatsApp (dejando solo el botón verde) */
+    /* Ocultar la burbuja gigante de WhatsApp (dejando solo el botón verde) */
     .whatsapp-bubble {
         display: none !important;
     }
     
-    /* 3. Ajustar el botón de la barra para que no choque */
+    /* Ajustar el botón de la barra para que no choque */
     .nav-action .btn-outline-gold {
         padding: 8px 12px;
         font-size: 0.7rem;
     }
-
-    /* 4. Ocultar el menú de texto SOLO en pantallas de celular reales */
-    .nav-menu {
-        display: none; !important; 
-    }
 }
 
-}
 /* ==========================================================================
    15. SECCIÓN DE TESTIMONIOS PREMIUM (4 CARDS INFORMALES)
    ========================================================================== */
