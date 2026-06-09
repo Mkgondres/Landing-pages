@@ -193,30 +193,48 @@ window.simulatePayment = function() {
     document.getElementById('success-phase').style.display = 'block';
 };
 /* ==========================================================================
-   MOTOR DEL CRONÓMETRO DE URGENCIA (EVERGREEN)
+   MOTOR DEL CRONÓMETRO DE URGENCIA (EVERGREEN CON MEMORIA)
    ========================================================================== */
-let totalSeconds = 2 * 3600 + 45 * 60; // 2 horas y 45 minutos
-
 function startTimer() {
     const hElement = document.getElementById('hours');
     const mElement = document.getElementById('minutes');
     const sElement = document.getElementById('seconds');
 
-    // Si por alguna razón no encuentra el reloj en la página, detiene la función para no dar error
+    // Si no encuentra el reloj en la página, se detiene para no dar error
     if (!hElement || !mElement || !sElement) return;
 
+    // Tiempo total de la oferta en milisegundos (2 horas y 45 minutos)
+    const duration = (2 * 3600 + 45 * 60) * 1000; 
+    
+    // El "ticket" secreto que le guardamos al cliente en su navegador
+    const storageKey = 'eliteOfferEndTime';
+    let endTime = localStorage.getItem(storageKey);
+    let now = new Date().getTime();
+
+    // Si es un cliente NUEVO (no tiene ticket) o si ya expiró su tiempo de antes
+    if (!endTime || now > endTime) {
+        endTime = now + duration;
+        localStorage.setItem(storageKey, endTime); // Le guardamos la hora límite exacta
+    }
+
+    // El motor que hace correr los números cada segundo
     setInterval(() => {
-        if (totalSeconds <= 0) {
-            totalSeconds = 2 * 3600 + 45 * 60; // Reinicio silencioso si llega a cero
+        now = new Date().getTime();
+        let distance = endTime - now;
+
+        // Si el tiempo llega a cero, reiniciamos el ciclo silenciosamente
+        if (distance <= 0) {
+            endTime = now + duration;
+            localStorage.setItem(storageKey, endTime);
+            distance = duration;
         }
 
-        totalSeconds--;
+        // Matemáticas para convertir milisegundos a horas, minutos y segundos
+        const hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((distance % (1000 * 60)) / 1000);
 
-        const hrs = Math.floor(totalSeconds / 3600);
-        const mins = Math.floor((totalSeconds % 3600) / 60);
-        const secs = totalSeconds % 60;
-
-        // Añade un '0' a la izquierda si el número es menor a 10 (ej: 09, 08...)
+        // Añadimos el cero a la izquierda si es menor a 10
         hElement.textContent = String(hrs).padStart(2, '0');
         mElement.textContent = String(mins).padStart(2, '0');
         sElement.textContent = String(secs).padStart(2, '0');
