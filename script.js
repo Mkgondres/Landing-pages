@@ -193,7 +193,7 @@ window.simulatePayment = function() {
     document.getElementById('success-phase').style.display = 'block';
 };
 /* ==========================================================================
-   MOTOR DE URGENCIA REAL (CAMBIO DE PRECIO AUTOMÁTICO AL LLEGAR A CERO)
+   MOTOR DE URGENCIA REAL (CAMBIO DE PRECIO Y ESTILO AL LLEGAR A CERO)
    ========================================================================== */
 function startTimer() {
     const hElement = document.getElementById('hours');
@@ -207,11 +207,9 @@ function startTimer() {
 
     if (!hElement || !mElement || !sElement) return;
 
-    // 1. CORRECCIÓN: Agregado el asterisco para la multiplicación
     const duration = (2 * 3600 + 45 * 60) * 1000; 
     const storageKey = 'eliteOfferEndTime';
     
-    // 2. MEJORA: Convertir el valor de localStorage a un número entero
     let storedEndTime = localStorage.getItem(storageKey);
     let endTime = storedEndTime ? parseInt(storedEndTime, 10) : null;
     let now = new Date().getTime();
@@ -229,6 +227,13 @@ function startTimer() {
             hElement.textContent = '00';
             mElement.textContent = '00';
             sElement.textContent = '00';
+            
+            // NUEVO: Eliminamos el tachado de todos los precios de la lista
+            const offerItems = document.querySelectorAll('.offer-item-value');
+            offerItems.forEach(item => {
+                item.style.textDecoration = 'none';
+                item.style.color = '#ffffff'; 
+            });
             
             if (timerText) {
                 timerText.textContent = "❌ LA OFERTA EXCLUSIVA HA EXPIRADO";
@@ -274,5 +279,6 @@ function startTimer() {
         }, 1000);
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', startTimer);
