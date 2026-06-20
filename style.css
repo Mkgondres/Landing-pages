@@ -1162,3 +1162,9 @@ body {
     }
 }
 
+/* Esto ayuda a que cuando se quita el tachado, el número se vea impecable */
+.offer-item-value.no-strike {
+    text-decoration: none !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
